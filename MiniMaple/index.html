@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>MiniMaple - Symbolic Differentiation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 450px;
+}
+h2 { margin-top: 0; color: #333; }
+.input-group { margin-bottom: 15px; }
+label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.row { display: flex; gap: 10px; }
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+button:hover { background-color: #218838; }
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e9ecef;
+    border-radius: 4px;
+    font-size: 18px;
+    min-height: 24px;
+    color: #212529;
+    word-break: break-all;
+}
+.error { color: #dc3545; background: #f8d7da; }
+.hint { font-size: 12px; color: #666; margin-top: 4px; }
+
+/* Стили для TDD тестов */
+.test-box {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: monospace;
+}
+.test-pass { color: green; }
+.test-fail { color: red; font-weight: bold; }
+</style>
+<body>
+
+<div class="container">
+    <h2>MiniMaple</h2>
+    
+    <div class="input-group">
+        <label for="expression">Выражение (полином):</label>
+        <input type="text" id="expression" value="4*x^3 - x^2" placeholder="Например: 4*x^3 - x^2">
+        <div class="hint">Допустимо: +, -, *, ^ и переменные</div>
+    </div>
+
+    <div class="row">
+        <div class="input-group" style="flex: 1;">
+            <label for="variable">Переменная:</label>
+            <input type="text" id="variable" value="x" placeholder="x">
+        </div>
+    </div>
+
+    <button id="runBtn">Дифференцировать</button>
+
+    <!-- Блок вывода результата (MathJax отрисует здесь формулу) -->
+    <div class="result-box" id="result">Результат появится здесь</div>
+    
+    <!-- Блок для TDD тестов -->
+    <div id="test-output" class="test-box"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
