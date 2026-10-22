@@ -1,0 +1,44 @@
+/* Настройка основной сетки */
+.main {
+    display: flex;
+    height: 90vh; /* Чтобы блок занимал почти весь экран */
+    overflow: hidden;
+}
+
+/* Настройка левой колонки (список) */
+.aside {
+    width: 30%; /* Занимает 30% ширины */
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    overflow-y: auto; /* Добавляет скролл, если список длинный */
+    box-sizing: border-box;
+}
+
+/* Настройка правой колонки (карта) */
+.content {
+    width: 70%; /* Занимает оставшиеся 70% */
+    overflow: hidden; /* Скрываем лишнее, чтобы не было полос прокрутки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9; /* Легкий фон для карты */
+}
+
+/* Красота для элементов списка */
+.launch-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.launch-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Чтобы карта не вылезала за края */
+#map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,41 @@
+.main {
+  height: 90vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.aside {
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+  width: 30%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.content {
+  background-color: #f9f9f9;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  display: flex;
+  overflow: hidden;
+}
+
+.launch-item {
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  transition: background .2s;
+}
+
+.launch-item:hover {
+  background-color: #f0f0f0;
+}
+
+#map {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/*# sourceMappingURL=index.1d42ac3b.css.map */
